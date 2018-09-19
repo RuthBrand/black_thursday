@@ -178,7 +178,7 @@ class SalesAnalyst
 
   def pull_out_pending_invoices
     @sales_engine.invoices.all.keep_if do |invoice|
-        invoice.status.to_s == "pending"
+        invoice.status.to_s == "pending" || invoice_paid_in_full?(invoice.id)
     end
   end
 

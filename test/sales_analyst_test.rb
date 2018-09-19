@@ -97,6 +97,9 @@ class SalesAnalystTest<Minitest::Test
     assert_equal 7, actual.count
   end
 
+  #silvestre, is there a transaction valid thing?
+  #Note: an invoice is considered pending if none of its transactions are successful.
+
   def test_it_can_return_merchants_with_pending_invoices
     expected = [@se.merchants.find_by_id(34444), @se.merchants.find_by_id(12334269)]
     assert_equal expected, @sa.merchants_with_pending_invoices
