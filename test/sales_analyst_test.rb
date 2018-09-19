@@ -98,7 +98,7 @@ class SalesAnalystTest<Minitest::Test
   end
 
   def test_it_can_return_merchants_with_pending_invoices
-    expected = [@se.merchants.find_by_id(2), @se.merchants.find_by_id(5)]
+    expected = [@se.merchants.find_by_id(34444), @se.merchants.find_by_id(12334269)]
     assert_equal expected, @sa.merchants_with_pending_invoices
   end
 
