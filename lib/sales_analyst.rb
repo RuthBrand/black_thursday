@@ -213,5 +213,18 @@ class SalesAnalyst
    end
  end
 
+ def merchants_with_only_one_item_registered_in_month(month)
+   binding.pry
+   dates_into_months[month].group_by do {}
+   end
+ end
+
+ def dates_into_months
+     all_invoices.group_by do |invoice|
+       invoice.created_at.strftime('%B')
+     end
+ end
+
+t
 
 end

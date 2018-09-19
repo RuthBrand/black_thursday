@@ -109,8 +109,15 @@ class SalesAnalystTest<Minitest::Test
     assert_equal [34444, 12334269], @sa.pull_out_the_merchant_ids_from_pending_invoices
   end
 
-  def test_which_merchants_offer_only_one_item_xx
+  def test_which_merchants_offer_only_one_item
     assert_equal 6, @sa.merchants_with_only_one_item.count
   end
+
+#   And merchants that only sell one item by the month they registered (merchant.created_at):
+# sales_analyst.merchants_with_only_one_item_registered_in_month("Month name") #=> [merchant, merchant, merchant]
+
+   def test_merchants_who_only_sold_one_item_in_the_month_they_registered_xx
+     assert_equal 6, @sa.merchants_with_only_one_item_registered_in_month("December")
+   end
 
 end
