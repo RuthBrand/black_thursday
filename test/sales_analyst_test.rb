@@ -117,4 +117,8 @@ class SalesAnalystTest<Minitest::Test
      assert_equal 1, @sa.merchants_with_only_one_item_registered_in_month("August").count
    end
 
+   def test_i_can_find_total_revenue_by_merchant_xx
+     assert_equal $500, @sa.revenue_by_merchant(1)
+   end
+
 end

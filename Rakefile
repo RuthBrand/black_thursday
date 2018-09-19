@@ -23,7 +23,7 @@ end
 
 task default: 'test'
 
-Rake::TestTask.new do |task|
+Rake::TestTask.new(:test) do |task|
   task.pattern = 'test/*_test.rb'
 end
 
