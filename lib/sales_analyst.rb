@@ -195,5 +195,23 @@ class SalesAnalyst
     end
   end
 
+  def merchants_with_only_one_item
+  merchant_ids =  @sales_engine.items.all.map do |item|
+      item.merchant_id
+    end
+    times_appearing = Hash.new(0)
+    merchant_ids.each do |id|
+      times_appearing[id] += 1
+     end
+   times_appearing
+   merchant_ids_with_one = times_appearing.reject do |key, value|
+     value > 1
+   end
+   merchant_ids_to_pass_in = merchant_ids_with_one.keys
+   @sales_engine.merchants.all.keep_if do |merchant|
+     merchant_ids_to_pass_in.include?(merchant.id)
+   end
+ end
+
 
 end

@@ -109,4 +109,8 @@ class SalesAnalystTest<Minitest::Test
     assert_equal [34444, 12334269], @sa.pull_out_the_merchant_ids_from_pending_invoices
   end
 
+  def test_which_merchants_offer_only_one_item_xx
+    assert_equal 6, @sa.merchants_with_only_one_item.count
+  end
+
 end
