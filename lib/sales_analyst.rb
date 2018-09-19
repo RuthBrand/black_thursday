@@ -214,9 +214,14 @@ class SalesAnalyst
  end
 
  def merchants_with_only_one_item_registered_in_month(month)
-   binding.pry
-   dates_into_months[month].group_by do {}
+   merchant_list = dates_into_months[month].group_by do |invoice|
+     invoice.merchant_id
    end
+   merchant_ids = merchant_list.reject do |merchant_id, invoices|
+     invoices.count > 1
+   end.keys
+   # merchants = []
+   # @sales_engine.merchant_ids
  end
 
  def dates_into_months
@@ -225,6 +230,6 @@ class SalesAnalyst
      end
  end
 
-t
+
 
 end
