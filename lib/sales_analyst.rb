@@ -220,8 +220,11 @@ class SalesAnalyst
    merchant_ids = merchant_list.reject do |merchant_id, invoices|
      invoices.count > 1
    end.keys
-   # merchants = []
-   # @sales_engine.merchant_ids
+
+   merchant_ids.map do |ids|
+     @sales_engine.merchants.find_by_id(ids)
+   end
+   
  end
 
  def dates_into_months
