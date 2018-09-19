@@ -114,7 +114,7 @@ class SalesAnalystTest<Minitest::Test
   end
 
    def test_merchants_who_only_sold_one_item_in_the_month_they_registered_xx
-     assert_equal 6, @sa.merchants_with_only_one_item_registered_in_month("August")
+     assert_equal 1, @sa.merchants_with_only_one_item_registered_in_month("August").count
    end
 
 end
